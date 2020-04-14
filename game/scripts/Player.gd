@@ -1,24 +1,35 @@
-extends RigidBody2D
+extends KinematicBody2D
+
+var speed: int = 100
+var gravity: int = 400
+var swim_speed: int = -500
+var velocity: Vector2 = Vector2.ZERO #Vector2(1, 2)
 
 
-func _ready():
+func _ready() -> void:
 	pass
 
 
-func _process(delta):
-	if rad2deg(rotation) < -30:
-		angular_velocity = 0
-		rotation = deg2rad(-30)
-
-	if linear_velocity.y > 0:
-		angular_velocity = 1.5
-
-
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("swim"):
+		#swim()
+		pass
+
+
+func get_input() -> void:
+	if Input.is_action_pressed("swim"):
 		swim()
+		pass
 
 
-func swim():
-	set_axis_velocity(Vector2(linear_velocity.x, -150))
-	angular_velocity = -3
+func _physics_process(delta: float) -> void:
+	# velocity = velocity.normalized() * speed
+	# velocity.x = speed
+	velocity.y = gravity
+	get_input()
+	move_and_collide(velocity * delta)
+
+
+func swim() -> void:
+	print("swim")
+	velocity.y = swim_speed
