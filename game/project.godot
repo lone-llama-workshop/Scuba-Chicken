@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Camera2D",
+"class": "QCamera",
+"language": "GDScript",
+"path": "res://scripts/Camera.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "QPlayer",
+"language": "GDScript",
+"path": "res://scripts/Player.gd"
+} ]
 _global_script_class_icons={
-
+"QCamera": "",
+"QPlayer": ""
 }
 
 [application]
@@ -18,6 +29,10 @@ _global_script_class_icons={
 config/name="Scuba Chicken"
 run/main_scene="res://stages/GameStage.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Utils="*res://scripts/Utils.gd"
 
 [display]
 

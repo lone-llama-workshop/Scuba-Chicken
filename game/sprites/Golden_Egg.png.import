@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cheddar_Standing.png-6f851fe8503f95444bd41c88f50998e4.stex"
+path="res://.import/Golden_Egg.png-d262ad76b626cc9a08f83b04f5f953fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Cheddar_Standing.png"
-dest_files=[ "res://.import/Cheddar_Standing.png-6f851fe8503f95444bd41c88f50998e4.stex" ]
+source_file="res://sprites/Golden_Egg.png"
+dest_files=[ "res://.import/Golden_Egg.png-d262ad76b626cc9a08f83b04f5f953fb.stex" ]
 
 [params]
 

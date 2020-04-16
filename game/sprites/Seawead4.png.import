@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cheddar_Standing.png-6f851fe8503f95444bd41c88f50998e4.stex"
+path="res://.import/Seawead4.png-094eae83b03c9ef2227bc5745131b0be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Cheddar_Standing.png"
-dest_files=[ "res://.import/Cheddar_Standing.png-6f851fe8503f95444bd41c88f50998e4.stex" ]
+source_file="res://sprites/Seawead4.png"
+dest_files=[ "res://.import/Seawead4.png-094eae83b03c9ef2227bc5745131b0be.stex" ]
 
 [params]
 
