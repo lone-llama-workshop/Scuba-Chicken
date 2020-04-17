@@ -18,10 +18,22 @@ _global_script_classes=[ {
 "class": "QPlayer",
 "language": "GDScript",
 "path": "res://scripts/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "QSeaweed",
+"language": "GDScript",
+"path": "res://scripts/Seaweed.gd"
+}, {
+"base": "Node2D",
+"class": "QSpawnerSeaweed",
+"language": "GDScript",
+"path": "res://scripts/SpawnerSeaweed.gd"
 } ]
 _global_script_class_icons={
 "QCamera": "",
-"QPlayer": ""
+"QPlayer": "",
+"QSeaweed": "",
+"QSpawnerSeaweed": ""
 }
 
 [application]
@@ -33,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Utils="*res://scripts/Utils.gd"
+Game="*res://scripts/Game.gd"
 
 [display]
 
