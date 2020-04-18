@@ -30,9 +30,11 @@ texture = ExtResource( 5 )
 
 [node name="SpawnerSeaweed" parent="." instance=ExtResource( 4 )]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="Background" type="Sprite" parent="CanvasLayer"]
+[node name="Background" type="Sprite" parent="Background"]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
