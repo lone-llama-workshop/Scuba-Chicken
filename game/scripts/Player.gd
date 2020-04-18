@@ -18,6 +18,7 @@ var velocity: Vector2 = Vector2()
 
 
 func _ready() -> void:
+	add_to_group(Game.GROUP_PLAYER)
 	set_state(states.FLOATING)
 
 
@@ -66,7 +67,7 @@ class PlayerState:
 	func input(event: InputEvent) -> void:
 		pass
 
-	func on_body_enter(other_body: Node) -> void:
+	func on_body_enter(collision: KinematicCollision2D) -> void:
 		pass
 
 	func exit() -> void:
@@ -91,7 +92,9 @@ class SwimmingState extends PlayerState:
 	func update(delta: float) -> void:
 		player.velocity.x = player.speed
 		player.velocity.y += player.gravity * delta
-		player.velocity = player.move_and_slide(player.velocity)
+		var collision = player.move_and_collide(player.velocity * delta)
+		if collision:
+			on_body_enter(collision)
 
 
 	func input(event: InputEvent) -> void:
@@ -102,6 +105,11 @@ class SwimmingState extends PlayerState:
 	func swim() -> void:
 		print("swim: %s" % player.position)
 		player.velocity.y = player.swim_velocity
+
+
+	func on_body_enter(collision: KinematicCollision2D) -> void:
+		if collision.collider.is_in_group(Game.GROUP_SEAWEED):
+			player.set_state(player.states.HIT)
 
 
 # -------------------------------------------------------------------------

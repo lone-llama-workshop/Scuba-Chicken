@@ -22,7 +22,8 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Camera"]
+[node name="DebugSprite" type="Sprite" parent="Camera"]
+visible = false
 texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
