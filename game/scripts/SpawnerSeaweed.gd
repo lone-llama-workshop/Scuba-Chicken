@@ -5,7 +5,7 @@ onready var scnSeaweed: PackedScene = preload("res://scenes/Seaweed.tscn")
 
 const SEAWEED_WIDTH: int = 64
 const OFFSET_X: int = 250
-const OFFSET_Y: int = 400
+const OFFSET_Y: int = 100
 const INITIAL_SPAWNS: int = 3
 
 
@@ -30,6 +30,8 @@ func move() -> void:
 
 	nextPosition.x += (SEAWEED_WIDTH / 2) + (OFFSET_X) + (SEAWEED_WIDTH / 2)
 	nextPosition.y += rand_range((0 + OFFSET_Y), viewportSize.y - OFFSET_Y)
+
+	nextPosition += Vector2(rand_range(1, 5), rand_range(4, 8))
 
 	position = nextPosition
 

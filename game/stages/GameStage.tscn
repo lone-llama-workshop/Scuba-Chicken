@@ -1,18 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/Background.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Camera.gd" type="Script" id=3]
+[ext_resource path="res://scenes/SpawnerSeaweed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/Player.png" type="Texture" id=5]
 
 [node name="GameStage" type="Node"]
 
 [node name="Camera" type="Camera2D" parent="."]
-offset = Vector2( -200, -100 )
+offset = Vector2( -100, -100 )
 anchor_mode = 0
 current = true
+smoothing_enabled = true
+smoothing_speed = 1.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
 script = ExtResource( 3 )
 
+[node name="Sprite" type="Sprite" parent="Camera"]
+texture = ExtResource( 5 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="SpawnerSeaweed" parent="." instance=ExtResource( 4 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

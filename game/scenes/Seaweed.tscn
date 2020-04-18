@@ -32,49 +32,48 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=7]
-radius = 16.0
-height = 96.0
+radius = 29.3584
+height = 508.992
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 166.223, 2.82607 )
+extents = Vector2( 322.808, 4.90579 )
 
 [node name="Seaweed" type="StaticBody2D"]
 rotation = 0.698132
-scale = Vector2( 2, 3 )
 script = ExtResource( 2 )
 
 [node name="SpriteTop" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -70 )
+position = Vector2( 2.72632, -312.213 )
 rotation = -3.14159
-scale = Vector2( 1, 1 )
+scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 1
 speed_scale = 0.75
 playing = true
 
 [node name="ShapeTop" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -85 )
+position = Vector2( 0.561798, -351.496 )
 shape = SubResource( 7 )
 
 [node name="BoundsTop" type="CollisionShape2D" parent="."]
-position = Vector2( 1.30023, -146.039 )
+position = Vector2( -10.9022, -621.365 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 8 )
 
 [node name="SpriteBot" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 70 )
+position = Vector2( -1.23407, 311.712 )
+scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
 frame = 4
 speed_scale = 0.75
 playing = true
 
 [node name="ShapeBot" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 85 )
+position = Vector2( -5.12358, 347.027 )
 shape = SubResource( 7 )
 
 [node name="BoundsBot" type="CollisionShape2D" parent="."]
-position = Vector2( -1.82722, 146.357 )
+position = Vector2( 15.5492, 624.819 )
 shape = SubResource( 8 )
 
 [node name="BottomRight" type="Position2D" parent="."]
-position = Vector2( 159.761, -5.82436 )
+position = Vector2( 282.747, -17.4258 )

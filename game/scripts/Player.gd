@@ -1,6 +1,15 @@
 extends KinematicBody2D
 class_name QPlayer
 
+onready var state: PlayerState
+var prev_state
+enum states {
+	FLOATING
+	SWIMMING
+	HIT
+	INVALID = -1
+}
+signal state_changed
 
 var speed: int = 100
 var gravity: int = 1500
@@ -9,20 +18,93 @@ var velocity: Vector2 = Vector2()
 
 
 func _ready() -> void:
-	swim()
+	set_state(states.FLOATING)
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("swim"):
-		swim()
+	state.input(event)
 
 
 func _physics_process(delta: float) -> void:
-	velocity.x = speed
-	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity)
+	state.update(delta)
 
 
-func swim() -> void:
-	print("swim: %s" % position)
-	velocity.y = swim_velocity
+func set_state(new_state: int) -> void:
+	if state:
+		state.exit()
+
+	prev_state = get_state()
+
+	if   new_state == states.FLOATING: state = FloatingState.new(self)
+	elif new_state == states.SWIMMING: state = SwimmingState.new(self)
+	elif new_state == states.HIT:      state = HitState.new(self)
+	else:
+		print("Error: Unexpected state (%d)" % new_state)
+
+	emit_signal("state_changed", self)
+
+
+func get_state() -> int:
+	if   state is FloatingState: return states.FLOATING
+	elif state is SwimmingState: return states.SWIMMING
+	elif state is HitState:      return states.HIT
+	else: return states.INVALID
+
+
+# #############
+# STATE MACHINE
+# #############
+class PlayerState:
+	var player: QPlayer
+
+	func _init(player: QPlayer) -> void:
+		self.player = player
+
+	func update(delta: float) -> void:
+		pass
+
+	func input(event: InputEvent) -> void:
+		pass
+
+	func on_body_enter(other_body: Node) -> void:
+		pass
+
+	func exit() -> void:
+		pass
+
+# -------------------------------------------------------------------------
+class FloatingState extends PlayerState:
+	func _init(p: QPlayer).(p) -> void:
+		pass
+
+	func input(event: InputEvent) -> void:
+		if event.is_action_pressed("swim"):
+			player.set_state(player.states.SWIMMING)
+
+
+# -------------------------------------------------------------------------
+class SwimmingState extends PlayerState:
+	func _init(p: QPlayer).(p) -> void:
+		swim()
+
+
+	func update(delta: float) -> void:
+		player.velocity.x = player.speed
+		player.velocity.y += player.gravity * delta
+		player.velocity = player.move_and_slide(player.velocity)
+
+
+	func input(event: InputEvent) -> void:
+		if event.is_action_pressed("swim"):
+			swim()
+
+
+	func swim() -> void:
+		print("swim: %s" % player.position)
+		player.velocity.y = player.swim_velocity
+
+
+# -------------------------------------------------------------------------
+class HitState extends PlayerState:
+	func _init(p: QPlayer).(p) -> void:
+		print("HIT! (%s)" % player.position)
