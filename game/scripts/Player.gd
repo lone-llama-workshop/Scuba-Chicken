@@ -116,3 +116,7 @@ class SwimmingState extends PlayerState:
 class HitState extends PlayerState:
 	func _init(p: QPlayer).(p) -> void:
 		print("HIT! (%s)" % player.position)
+
+	func input(event: InputEvent) -> void:
+		if event.is_action_pressed("swim"):
+			player.get_tree().change_scene("res://stages/GameStage.tscn")

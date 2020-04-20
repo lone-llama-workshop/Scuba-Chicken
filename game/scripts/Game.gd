@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _set_score_current(new_value: int) -> void:
 	score_current = new_value
+	_set_score_best(new_value)
 	emit_signal("score_changed")
 	print("Current Score: %s" % score_current)
 
