@@ -58,7 +58,6 @@ shape = SubResource( 7 )
 
 [node name="BoundsTop" type="CollisionShape2D" parent="."]
 position = Vector2( -10.9022, -621.365 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 8 )
 
 [node name="SpriteBot" type="AnimatedSprite" parent="."]
@@ -77,7 +76,143 @@ position = Vector2( 15.5492, 624.819 )
 shape = SubResource( 8 )
 
 [node name="BottomRight" type="Position2D" parent="."]
-position = Vector2( 282.747, -17.4258 )
+position = Vector2( 639.045, -34.9464 )
 
 [node name="Egg" parent="." instance=ExtResource( 3 )]
 rotation = -0.698132
+
+[node name="Boundaries" type="Node2D" parent="."]
+rotation = -0.698132
+
+[node name="Boundary" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 492.166, -682.264 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 1
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary2" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 422.807, -713.356 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary3" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 367.799, -773.147 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary4" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 312.791, -830.547 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 4
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary5" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 580.657, -605.731 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 4
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary15" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 537.487, -639.813 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 3
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary6" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 642.84, -538.765 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 3
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary7" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( 719.372, -493.324 )
+rotation = -2.44346
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 2
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary8" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( -574.408, 596.74 )
+rotation = 0.698132
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 4
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary14" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( -528.967, 648.998 )
+rotation = 0.698132
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 4
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary9" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( -638.983, 553.69 )
+rotation = 0.698132
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 3
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary10" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( -703.558, 501.074 )
+rotation = 0.698132
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 3
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary11" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( -481.134, 692.406 )
+rotation = 0.698132
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 3
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary12" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( -418.951, 745.022 )
+rotation = 0.698132
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 2
+speed_scale = 0.75
+playing = true
+
+[node name="Boundary13" type="AnimatedSprite" parent="Boundaries"]
+position = Vector2( -354.376, 809.597 )
+rotation = 0.698132
+scale = Vector2( 2, 5 )
+frames = SubResource( 6 )
+frame = 1
+speed_scale = 0.75
+playing = true

@@ -159,6 +159,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Tap to Start"
 
 [node name="GameOverScreen" type="CenterContainer" parent="HUD"]
+visible = false
 margin_right = 512.0
 margin_bottom = 368.0
 script = SubResource( 6 )
