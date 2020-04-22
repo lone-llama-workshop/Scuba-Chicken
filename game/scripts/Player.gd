@@ -76,11 +76,14 @@ class PlayerState:
 # -------------------------------------------------------------------------
 class FloatingState extends PlayerState:
 	func _init(p: QPlayer).(p) -> void:
-		pass
+		player.get_node("Body/Anim").play("float")
 
 	func input(event: InputEvent) -> void:
 		if event.is_action_pressed("swim"):
 			player.set_state(player.states.SWIMMING)
+
+	func exit() -> void:
+		player.get_node("Body/Anim").stop()
 
 
 # -------------------------------------------------------------------------
@@ -103,7 +106,7 @@ class SwimmingState extends PlayerState:
 
 
 	func swim() -> void:
-		print("swim: %s" % player.position)
+		player.get_node("Body/Anim").play("swim")
 		player.velocity.y = player.swim_velocity
 
 
