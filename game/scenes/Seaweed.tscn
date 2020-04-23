@@ -48,7 +48,7 @@ position = Vector2( -20.4724, -301.058 )
 rotation = -3.14159
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 speed_scale = 0.75
 playing = true
 
@@ -69,6 +69,7 @@ position = Vector2( 492.166, -682.264 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.75
 playing = true
 
@@ -77,6 +78,7 @@ position = Vector2( 422.807, -713.356 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.75
 playing = true
 
@@ -85,7 +87,7 @@ position = Vector2( 367.799, -773.147 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 4
+frame = 1
 speed_scale = 0.75
 playing = true
 
@@ -94,7 +96,7 @@ position = Vector2( 312.791, -830.547 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 4
+frame = 1
 speed_scale = 0.75
 playing = true
 
@@ -103,7 +105,6 @@ position = Vector2( 580.657, -605.731 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 3
 speed_scale = 0.75
 playing = true
 
@@ -112,7 +113,7 @@ position = Vector2( 537.487, -639.813 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 2
+frame = 4
 speed_scale = 0.75
 playing = true
 
@@ -121,7 +122,7 @@ position = Vector2( 642.84, -538.765 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 2
+frame = 4
 speed_scale = 0.75
 playing = true
 
@@ -130,7 +131,7 @@ position = Vector2( 719.372, -493.324 )
 rotation = -2.44346
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 2
+frame = 4
 speed_scale = 0.75
 playing = true
 
@@ -138,7 +139,7 @@ playing = true
 position = Vector2( -14.5872, 293.762 )
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 4
+frame = 1
 speed_scale = 0.75
 playing = true
 
@@ -159,7 +160,6 @@ position = Vector2( -574.408, 596.74 )
 rotation = 0.698132
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 3
 speed_scale = 0.75
 playing = true
 
@@ -168,7 +168,6 @@ position = Vector2( -528.967, 648.998 )
 rotation = 0.698132
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 3
 speed_scale = 0.75
 playing = true
 
@@ -177,7 +176,7 @@ position = Vector2( -638.983, 553.69 )
 rotation = 0.698132
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 2
+frame = 4
 speed_scale = 0.75
 playing = true
 
@@ -186,7 +185,7 @@ position = Vector2( -703.558, 501.074 )
 rotation = 0.698132
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 2
+frame = 4
 speed_scale = 0.75
 playing = true
 
@@ -195,7 +194,7 @@ position = Vector2( -481.134, 692.406 )
 rotation = 0.698132
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 speed_scale = 0.75
 playing = true
 
@@ -204,7 +203,7 @@ position = Vector2( -418.951, 745.022 )
 rotation = 0.698132
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 speed_scale = 0.75
 playing = true
 
@@ -213,6 +212,7 @@ position = Vector2( -354.376, 809.597 )
 rotation = 0.698132
 scale = Vector2( 2, 5 )
 frames = SubResource( 6 )
+frame = 2
 speed_scale = 0.75
 playing = true
 
