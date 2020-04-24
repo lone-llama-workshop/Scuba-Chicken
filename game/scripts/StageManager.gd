@@ -26,5 +26,5 @@ func change_scene(stage: String) -> void:
 	yield($Anim, "animation_finished")
 
 	layer = 1
-	get_tree().get_root().set_disable_input(true)
+	get_tree().get_root().set_disable_input(false)
 	is_changing = false

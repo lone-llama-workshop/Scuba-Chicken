@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://sprites/Background.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://sprites/Player.png" type="Texture" id=5]
 [ext_resource path="res://fonts/ThisSmacky.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://fonts/ThisSmackyOutlin.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://sprites/PlayButton2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/PlayButton1.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFontData" id=1]
 antialiased = false
@@ -21,6 +23,7 @@ script/source = "extends Label
 
 
 func _ready() -> void:
+	hide()
 	Game.connect(\"score_changed\", self, \"_on_score_changed\")
 	Utils.get_main_node().get_node(\"Player\").connect(\"state_changed\", self, \"_on_player_state_changed\")
 
@@ -32,6 +35,9 @@ func _on_score_changed() -> void:
 func _on_player_state_changed(player: QPlayer) -> void:
 	if player.get_state() == player.states.HIT:
 		hide()
+	
+	if player.get_state() == player.states.SWIMMING:
+		show()
 "
 
 [sub_resource type="GDScript" id=4]
@@ -49,8 +55,22 @@ func _on_player_state_changed(player: QPlayer) -> void:
 		hide()
 "
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 6 )
+[sub_resource type="DynamicFont" id=11]
+size = 36
+font_data = ExtResource( 7 )
+
+[sub_resource type="GDScript" id=12]
+resource_name = "TextureButton"
+script/source = "extends TextureButton
+
+onready var player: QPlayer = Utils.get_main_node().get_node(\"Player\")
+
+func _ready():
+	connect(\"pressed\", self, \"_on_pressed\")
+	
+func _on_pressed(): 
+	 player.set_state(player.states.SWIMMING)
+"
 
 [sub_resource type="GDScript" id=6]
 resource_name = "GameOverScreen"
@@ -142,7 +162,6 @@ __meta__ = {
 }
 
 [node name="StartScreen" type="CenterContainer" parent="HUD"]
-visible = false
 margin_right = 512.0
 margin_bottom = 368.0
 script = SubResource( 4 )
@@ -150,13 +169,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HUD/StartScreen"]
-margin_left = 205.0
-margin_top = 172.0
-margin_right = 306.0
-margin_bottom = 195.0
-custom_fonts/font = SubResource( 5 )
-text = "Tap to Start"
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/StartScreen"]
+margin_left = 126.0
+margin_top = 90.0
+margin_right = 386.0
+margin_bottom = 277.0
+
+[node name="Label" type="Label" parent="HUD/StartScreen/VBoxContainer"]
+margin_right = 260.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 11 )
+text = "Scuba Chicken"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/StartScreen/VBoxContainer"]
+margin_top = 59.0
+margin_right = 260.0
+margin_bottom = 187.0
+
+[node name="TextureButton" type="TextureButton" parent="HUD/StartScreen/VBoxContainer/CenterContainer"]
+margin_left = 66.0
+margin_right = 194.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+expand = true
+script = SubResource( 12 )
 
 [node name="GameOverScreen" type="CenterContainer" parent="HUD"]
 visible = false

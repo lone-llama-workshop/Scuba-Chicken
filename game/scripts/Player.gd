@@ -78,10 +78,6 @@ class FloatingState extends PlayerState:
 	func _init(p: QPlayer).(p) -> void:
 		player.get_node("Body/Anim").play("float")
 
-	func input(event: InputEvent) -> void:
-		if event.is_action_pressed("swim"):
-			player.set_state(player.states.SWIMMING)
-
 	func exit() -> void:
 		player.get_node("Body/Anim").stop()
 
