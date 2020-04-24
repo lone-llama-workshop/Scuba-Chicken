@@ -5,12 +5,19 @@ const GROUP_PLAYER  = "player"
 
 var score_current: int = 0 setget _set_score_current
 var score_best: int = 0 setget _set_score_best
+var is_paused: bool = false
 
 signal score_changed
 
 
 func _ready() -> void:
-	pass
+	pause_mode = Node.PAUSE_MODE_PROCESS
+	
+	 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		is_paused = !is_paused
+		get_tree().paused = is_paused
 
 
 func _set_score_current(new_value: int) -> void:
