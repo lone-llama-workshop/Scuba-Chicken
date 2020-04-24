@@ -116,6 +116,3 @@ class HitState extends PlayerState:
 	func _init(p: QPlayer).(p) -> void:
 		print("HIT! (%s)" % player.position)
 
-	func input(event: InputEvent) -> void:
-		if event.is_action_pressed("swim"):
-			StageManager.change_scene(StageManager.GAME_STAGE)
