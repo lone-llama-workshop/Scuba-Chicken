@@ -105,6 +105,8 @@ class SwimmingState extends PlayerState:
 		player.get_node("Body/Anim").play("swim")
 		player.velocity.y = player.swim_velocity
 
+		AudioPlayer.get_node("sfx_swim").play()
+
 
 	func on_body_enter(collision: KinematicCollision2D) -> void:
 		if collision.collider.is_in_group(Game.GROUP_SEAWEED):
@@ -115,4 +117,5 @@ class SwimmingState extends PlayerState:
 class HitState extends PlayerState:
 	func _init(p: QPlayer).(p) -> void:
 		print("HIT! (%s)" % player.position)
+		AudioPlayer.get_node("sfx_hit").play()
 

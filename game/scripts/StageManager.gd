@@ -19,6 +19,7 @@ func change_scene(stage: String) -> void:
 	$Anim.play("fade_in")
 	yield($Anim, "animation_finished")
 
+	AudioPlayer.get_node("sfx_transition").play()
 	get_tree().change_scene(stage)
 	emit_signal("stage_changed")
 

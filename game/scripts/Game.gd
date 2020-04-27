@@ -12,8 +12,8 @@ signal score_changed
 
 func _ready() -> void:
 	pause_mode = Node.PAUSE_MODE_PROCESS
-	
-	 
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		is_paused = !is_paused

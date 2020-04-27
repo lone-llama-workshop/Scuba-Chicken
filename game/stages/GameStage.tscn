@@ -57,25 +57,25 @@ func _on_player_state_changed(player: QPlayer) -> void:
 		hide()
 "
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=5]
 size = 36
 font_data = ExtResource( 7 )
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=6]
 resource_name = "TextureButton"
 script/source = "extends TextureButton
 
 onready var player: QPlayer = Utils.get_main_node().get_node(\"Player\")
 
-func _ready():
+func _ready() -> void:
 	connect(\"pressed\", self, \"_on_pressed\")
-	
-func _on_pressed(): 
-	 player.set_state(player.states.SWIMMING)
+
+func _on_pressed() -> void:
+	AudioPlayer.get_node(\"sfx_button\").play()
+	player.set_state(player.states.SWIMMING)
 "
 
-[sub_resource type="GDScript" id=6]
-resource_name = "GameOverScreen"
+[sub_resource type="GDScript" id=7]
 script/source = "extends CenterContainer
 
 
@@ -104,25 +104,26 @@ func _on_player_state_changed(player: QPlayer) -> void:
 		hide()
 "
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 20
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 7 )
 
-[sub_resource type="GDScript" id=13]
+[sub_resource type="GDScript" id=11]
 resource_name = "RestartButton"
 script/source = "extends TextureButton
 
 func _ready():
 	connect(\"pressed\", self, \"_on_pressed\")
-	
-func _on_pressed(): 
-	 StageManager.change_scene(StageManager.GAME_STAGE)
+
+func _on_pressed() -> void:
+	AudioPlayer.get_node(\"sfx_button\").play()
+	StageManager.change_scene(StageManager.GAME_STAGE)
 "
 
 [node name="GameStage" type="Node"]
@@ -191,7 +192,7 @@ margin_bottom = 277.0
 [node name="Label" type="Label" parent="HUD/StartScreen/VBoxContainer"]
 margin_right = 260.0
 margin_bottom = 55.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 5 )
 text = "Scuba Chicken"
 align = 1
 
@@ -210,12 +211,12 @@ size_flags_vertical = 0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 8 )
 expand = true
-script = SubResource( 12 )
+script = SubResource( 6 )
 
 [node name="GameOverScreen" type="CenterContainer" parent="HUD"]
 margin_right = 512.0
 margin_bottom = 368.0
-script = SubResource( 6 )
+script = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -229,7 +230,7 @@ margin_bottom = 293.0
 [node name="Label" type="Label" parent="HUD/GameOverScreen/VBox"]
 margin_right = 128.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Game Over"
 
 [node name="HBoxScore" type="HBoxContainer" parent="HUD/GameOverScreen/VBox"]
@@ -243,14 +244,14 @@ margin_left = 33.0
 margin_top = 1.0
 margin_right = 91.0
 margin_bottom = 24.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Score: "
 
 [node name="Score" type="Label" parent="HUD/GameOverScreen/VBox/HBoxScore"]
 margin_left = 95.0
 margin_right = 95.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 
 [node name="HBoxBestScore" type="HBoxContainer" parent="HUD/GameOverScreen/VBox"]
 margin_top = 62.0
@@ -263,14 +264,14 @@ margin_left = 11.0
 margin_top = 1.0
 margin_right = 113.0
 margin_bottom = 24.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Best Score: "
 
 [node name="Score" type="Label" parent="HUD/GameOverScreen/VBox/HBoxBestScore"]
 margin_left = 117.0
 margin_right = 117.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 
 [node name="CenterContainer" type="CenterContainer" parent="HUD/GameOverScreen/VBox"]
 margin_top = 91.0
@@ -286,4 +287,4 @@ size_flags_vertical = 0
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 11 )
 expand = true
-script = SubResource( 13 )
+script = SubResource( 11 )
