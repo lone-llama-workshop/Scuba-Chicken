@@ -40,7 +40,7 @@ _global_script_class_icons={
 
 config/name="Scuba Chicken"
 run/main_scene="res://stages/GameStage.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/Cheddar_Icon.png"
 
 [autoload]
 
